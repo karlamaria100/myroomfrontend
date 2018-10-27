@@ -67,7 +67,7 @@ export class ChatComponent implements OnInit {
 
   scrollToBottom(): void {
     const scrollPane: any = this.el.nativeElement.querySelector(
-      '.chat-card-content'
+      '.chat'
     );
     scrollPane.scrollTop = scrollPane.scrollHeight;
   }

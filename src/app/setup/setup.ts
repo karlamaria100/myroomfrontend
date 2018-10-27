@@ -70,7 +70,7 @@ export class Setup {
     directLine.activity$
       .filter(
         activity =>
-          activity.type === 'message' && activity.from.id === 'smarthackqatestbot'
+          activity.type === 'message' && activity.from.id === 'myroombot'
       )
       .subscribe(message =>
         messagesService.addMessage(

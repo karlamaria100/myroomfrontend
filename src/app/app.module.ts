@@ -16,10 +16,14 @@ import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { FromNowPipe } from './from-now.pipe';
 import { ChatComponent } from './chat/chat.component';
 import {SharedService} from './services/shared.service';
+import { PresentationComponent } from './presentation/presentation.component';
+import {AppRoutingModule} from "./app-routing.module";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent],
+  declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent, PresentationComponent, LoginComponent],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -27,6 +31,7 @@ import {SharedService} from './services/shared.service';
     MatButtonModule,
     MatInputModule
   ],
+  // exports:[ AppRoutingModule],
   providers: [MessagesService, ThreadsService, UsersService, SharedService],
   bootstrap: [AppComponent]
 })
