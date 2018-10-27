@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatCardModule,
   MatButtonModule,
-  MatInputModule
+  MatInputModule, MatDialogModule
 } from '@angular/material';
 
 import { NgModule } from '@angular/core';
@@ -19,10 +19,12 @@ import {SharedService} from './services/shared.service';
 import { PresentationComponent } from './presentation/presentation.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent, PresentationComponent, LoginComponent],
+  declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent, PresentationComponent, LoginComponent, RegisterComponent],
   imports: [
+    MatDialogModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -33,6 +35,7 @@ import { LoginComponent } from './login/login.component';
   ],
   // exports:[ AppRoutingModule],
   providers: [MessagesService, ThreadsService, UsersService, SharedService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginComponent, RegisterComponent]
 })
 export class AppModule {}
