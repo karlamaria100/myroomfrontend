@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from "@angular/material";
 import {MainService} from "../services/main.service";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,18 +11,10 @@ import {MainService} from "../services/main.service";
 export class RegisterComponent implements OnInit {
 
 
-  public step1 = true;
-  public step2 = false;
-  public step3 = false;
-  public step4 = false;
-  public step5 = false;
-  public user: any = {passions: []};
-  public passions = [];
-  public allPassions = [];
-  public avatar: any;
-  public alertMessage: string;
-  public showAlertMessage: boolean;
-  public choseAll: boolean;
+  showSpinner: boolean;
+
+  register = false;
+  userForm: FormGroup;
 
 
   closeSignUpModal  () {
@@ -29,7 +22,7 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  constructor(public dialogRef: MatDialogRef<RegisterComponent>, public mainService: MainService) { }
+  constructor(private _formBuilder: FormBuilder,private router: Router,  public mainService: MainService) { }
 
 
 
@@ -50,18 +43,18 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit() {
     this.showSpinner = true;
-    var data = {
+    const data = {
       name: this.userForm.value.companyName
     }
-    this._service.insertCompany(data).
+    this.mainService.insertCompany(data).
     subscribe(response => {
       console.log(response);
-      this.insertUser(response)
+      this.insertUser(response);
     }, Error => console.log(Error));
   }
 
   insertUser(Obj) {
-    var data = {
+    const data = {
       firstName: this.userForm.value.firstName,
       lastName: this.userForm.value.lastName,
       email: this.userForm.value.email,
@@ -69,10 +62,9 @@ export class RegisterComponent implements OnInit {
       role: 1,
       company: Obj.company.id
     }
-    this._service.insertAdmin(data).
+    this.mainService.insertAdmin(data).
     subscribe(response => {
       console.log(response);
-      //if(response === "ACCEPTED") this.register = true;
       this.register = true;
       this.showSpinner = false;
     }, Error => console.log(Error));
