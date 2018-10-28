@@ -1,3 +1,28 @@
-<p>
-  register works!
-</p>
+<div  class="modal-content modal-lg" style="background-color: #DEB887 !important;">
+  <div class="modal-header" style=" border:0 ">
+    <button type="button" (click)="closeSignUpModal()"  style="outline: none!important;" class="close">
+      <span aria-hidden="true">×</span></button>
+  </div>
+  <div class="modal-body sign-up" style="padding-left: 1rem;padding-right: 1rem;padding-top:0; padding-bottom: 0; border:0 ">
+    <div alt="step2" *ngIf="step1">
+      <h2 class="small-font" style="margin-top: 5px">CREATE YOUR ACCOUNT</h2>
+      <div class="modal-container">
+        <input [(ngModel)]="user.firstName" placeholder="First Name"  class="signup-input small-font" >
+        <input [(ngModel)]="user.lastName" placeholder="Last Name"  class="signup-input small-font">
+        <input [(ngModel)]="user.email" placeholder="Email" class="signup-input small-font">
+        <input [(ngModel)]="user.password" placeholder="Password" type="password" class="signup-input small-font">
+        <!--<input [(ngModel)]="user.gender" placeholder="Ge" type="password" class="signup-input small-font">-->
+
+        <select [(ngModel)]="user.gender" align="left">
+          <option value="">By Gender</option>
+          <option value="1">Female</option>
+          <option value="0">Male</option>
+        </select>
+      </div>
+        <button class="button small-but-bigger-font" (click)="finishAccount()">FINISH ></button>
+      </div>
+
+    <div class="alert alert-default text-white small-font" style="padding-bottom: 10px" [hidden]="!showAlertMessage">{{alertMessage}}</div>
+  </div>
+</div>
+

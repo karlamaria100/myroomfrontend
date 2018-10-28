@@ -19,14 +19,6 @@
     padding-top: 14px;
   }
 
-  #ask_square :focus{
-    color:#f4511e !important;
-  }
-
-  .mat-focused{
-    color:#f4511e !important;
-  }
-
 </style>
 
 <div class="parent" style="position: fixed; z-index: 1; bottom: 0; right:0; width: 360px;">
@@ -35,10 +27,10 @@
         <app-chat-message *ngFor="let message of messages | async" [message]="message">
         </app-chat-message>
       </mat-card-content>
-      <mat-card-actions style="color:#f4511e  !important;">
-        <mat-form-field id="ask_square" class="full-width" appearance="outline" style="color:#f4511e !important;">
-          <mat-label style="color:#f4511e !important;">Ask me everything</mat-label>
-          <input style="color:#f4511e !important;" type="text" matInput placeholder="Type here" (keydown.enter)="onEnter($event)" [(ngModel)]="draftMessage.text"/>
+      <mat-card-actions>
+        <mat-form-field id="ask_square" class="full-width" appearance="outline">
+          <mat-label>Ask me everything</mat-label>
+          <input type="text" matInput placeholder="Type here" (keydown.enter)="onEnter($event)" [(ngModel)]="draftMessage.text"/>
         </mat-form-field>
         <span class="input-group-btn">
             <button class="msg-send" mat-raised-button color="primary" (click)="onEnter($event)">Send</button>
