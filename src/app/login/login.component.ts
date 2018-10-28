@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('Company', JSON.stringify(response.user.company));
 
           if (response.user.role.name === "ADMIN") {
-            this.router.navigate(['/dashboard'])
+            this.router.navigate(['/dashboard']);
 
             this.userObjectRetrived = localStorage.getItem('UserAdminObject');
             this.UserAdminObject = JSON.parse(this.userObjectRetrived);
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
               this.Company = JSON.parse(this.companyObjectRetrieved);
             console.log('retrievedObjectCompany: ', this.UserAdminObject);
           } else {
-            alert("The web dashboard is currently unavailable for user accounts. Use an admin account or the mobile app.")
+            alert("The web dashboard is currently unavailable for user accounts. Use an admin account or the mobile app.");
             this.router.navigate(['/admin-only']);
           }
         }
