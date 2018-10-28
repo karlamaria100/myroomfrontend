@@ -19,8 +19,7 @@ import {SharedService} from './services/shared.service';
 export class AppComponent implements OnInit {
 
 
-  constructor(
-  ) {
+  constructor(public shared: SharedService) {
 
   }
 

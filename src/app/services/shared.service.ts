@@ -14,6 +14,8 @@ export class SharedService {
   public initialMessages: Message[];
   currentUser: User;
 
+  public url: "http://localhost:8083/myroom";
+
 
   constructor() { }
 }

@@ -1,62 +1,27 @@
-<style>
-
-  body {
-    background-color: #DADADA;
-  }
-
-  body > .grid {
-    height: 100%;
-  }
-
-  .column {
-    max-width: 450px;
-  }
-</style>
-<style>
-  .ui.teal.button {
-    background-color: #005ead;
-    color: #FFFFFF;
-    text-shadow: none;
-    background-image: none;
-  }
-
-  .ui.inverted.teal.segment {
-    background-color: #005ead !important;
-    color: #FFFFFF !important;
-  }
-</style>
-<div style="margin-top:10%;">
-  <div class="ui middle aligned center aligned grid">
-    <div class="column">
-      <img src="bower_components/logo/waypoint-logo.png" class="ui fluid image"/>
-
-      <div class="ui inverted divider"></div>
-      <form class="ui large form">
-        <div class="ui inverted stacked segment">
-          <div class="field">
-            <div class="ui  left icon inverted transparent  input">
-              <i class="user icon"></i>
-              <input type="text" name="email" ng-enter="doLogin()" placeholder="E-mail address" ng-model="user.email"
-                     style="color:white;">
-            </div>
-          </div>
-          <div class="field">
-            <div class="ui left icon inverted transparent  input">
-              <i class="lock icon"></i>
-              <input type="password" name="password" ng-enter="doLogin()" placeholder="Password" ng-model="user.password"
-                     style="color:white;">
-            </div>
-          </div>
-          <div class="field">
-            <div class="ui left icon inverted transparent  input">
-              <a ui-sref="requestPassword">Forgot password?</a>
-            </div>
-          </div>
-          <div class="ui fluid large teal submit button" ng-click="doLogin()">Login</div>
-        </div>
-        <div class="ui red message" ng-show="showAlert">Error! The email or password can not be found!</div>
-      </form>
-    </div>
+<div class="modal-content modal-lg"  id="loginModal"  style="background-color: #DEB887 !important;">
+  <div class="modal-header" style="border: none !important; outline: none !important">
+    <button type="button" (click)="close()"  style="outline: none!important;" class="close">
+      <span aria-hidden="true">×</span></button>
   </div>
+  <div class="modal-body sign-up" style="border: none !important; ">
+    <div>
+      <h2>Login</h2>
+      <div class="modal-container">
+        <ul class="sign-up-list ">
+          <input [(ngModel)]="user.email" placeholder="Email" class="signup-input">
+          <input [(ngModel)]="user.password" placeholder="Password" type="password" class="signup-input">
+        </ul>
+      </div>
+      <!--<div style="margin-bottom: 10px">-->
+        <!--<h4><a (click)="forgot()" style="color:white;text-decoration: underline;cursor: pointer">Forgot Password</a></h4>-->
+      <!--</div>-->
+      <!--<div style="margin-bottom: 10px" *ngIf="showResend">-->
+        <!--<h4><a (click)="resendVerification()" style="color:white;text-decoration: underline;cursor: pointer">Resend verification email</a></h4>-->
+      <!--</div>-->
+      <button class="button" style="margin-left: auto; margin-right: auto; display: block" (click)="doLogin()">Login</button>
+    </div>
+    <div class="alert" style="color: white" (show)="showAlertMessage">{{messageAlert}}</div>
+  </div>
+  <!--<div class="modal-footer" style="border: none">-->
+  <!--</div>-->
 </div>
-

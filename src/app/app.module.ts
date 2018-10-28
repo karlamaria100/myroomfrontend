@@ -20,11 +20,14 @@ import { PresentationComponent } from './presentation/presentation.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {MainService} from './services/main.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent, PresentationComponent, LoginComponent, RegisterComponent],
   imports: [
     MatDialogModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -34,7 +37,7 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule
   ],
   // exports:[ AppRoutingModule],
-  providers: [MessagesService, ThreadsService, UsersService, SharedService],
+  providers: [MessagesService, ThreadsService, UsersService, SharedService, MainService],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent, RegisterComponent]
 })
