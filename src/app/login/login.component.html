@@ -1,27 +1,94 @@
-<div class="modal-content modal-lg" style="background-color: #DEB887 !important;">
-  <div class="modal-header" style="border: none !important; outline: none !important">
-    <button type="button" (click)="close()"  style="outline: none!important;" class="close">
-      <span aria-hidden="true">×</span></button>
-  </div>
-  <div class="modal-body sign-up" style="border: none !important; ">
-    <div>
-      <h2>Login</h2>
-      <div class="modal-container">
-        <ul class="sign-up-list ">
-          <input [(ngModel)]="user.email" placeholder="Email" class="signup-input">
-          <input [(ngModel)]="user.password" placeholder="Password" type="password" class="signup-input">
-        </ul>
-      </div>
-      <!--<div style="margin-bottom: 10px">-->
-        <!--<h4><a (click)="forgot()" style="color:white;text-decoration: underline;cursor: pointer">Forgot Password</a></h4>-->
-      <!--</div>-->
-      <!--<div style="margin-bottom: 10px" *ngIf="showResend">-->
-        <!--<h4><a (click)="resendVerification()" style="color:white;text-decoration: underline;cursor: pointer">Resend verification email</a></h4>-->
-      <!--</div>-->
-      <button class="button" style="margin-left: auto; margin-right: auto; display: block" (click)="doLogin()">Login</button>
+<!--<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>-->
+
+<div class="container-fluid bg-image">
+
+  <div *ngIf="!loginOk">
+    <div class="animated-show-error  animated  bounce message-show">
+      Email or password is incorrect
     </div>
-    <div class="alert" style="color: white" (show)="showAlertMessage">{{messageAlert}}</div>
   </div>
-  <!--<div class="modal-footer" style="border: none">-->
-  <!--</div>-->
+
+  <div *ngIf="showSentForgot">
+    <div class="animated-show-error animated  bounce message-show">
+      An email was sent to reset your password
+    </div>
+  </div>
+
+  <div *ngIf="!loginForbidden">
+    <div class="animated-show-error animated  bounce message-show">
+      This email is inactive
+    </div>
+  </div>
+
+
+  <div *ngIf="badSentForgot">
+    <div class="animated-show-error animated  bounce message-show">
+      Email is incorrect
+    </div>
+  </div>
+
+  <div class="">
+    <nav class="navbar pull-left">
+      <div class="nav">
+        <img src="../../assets/images/1341665009_00d83e48-24d9-4651-9441-778f0f8fe27c.png" class="d-inline-block align-top appLogo">
+      </div>
+    </nav>
+  </div>
+
+  <div class="col-xs-12 pull-right login-container">
+
+    <h2> Login </h2>
+    <form [formGroup]="userForm">
+      <div class="form-group ">
+        <input type="email" #refEmail placeholder="* johnsmith@ashburton.com" class="form-control" formControlName="email">
+        <div *ngIf="userForm.controls['email'].hasError('required')" class="alert-input">
+          Please enter an email
+        </div>
+        <div *ngIf="userForm.controls['email'].hasError('pattern')" class="alert-input">
+
+        </div>
+      </div>
+
+
+      <div class="form-group ">
+        <input type="password" placeholder="* password" class="form-control" formControlName="password">
+        <div *ngIf="userForm.controls['password'].hasError('required')" class="alert-input">
+          Please enter a password
+        </div>
+        <div *ngIf="userForm.controls['password'].hasError('minlength')" class="alert-input">
+          Please enter at least 5 characters
+        </div>
+      </div>
+
+      <a (click)="showForgotPasswordInput()">Forgot password?</a>
+
+      <div *ngIf="showMailInput">
+        <form [formGroup]="forgotPasswordForm" (ngSubmit)="forgotPassword()">
+          <div class="form-group show">
+            <input type="email" #refEmail placeholder="johnsmith@ashburton.com" class="form-control" formControlName="email">
+            <div *ngIf="forgotPasswordForm.controls['email'].hasError('required')" class="alert-input">
+              Please enter an email
+            </div>
+            <div *ngIf="forgotPasswordForm.controls['email'].hasError('pattern')" class="alert-input">
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <!--<br>-->
+      <div *ngIf="!showMailInput;  else elseBlock" >
+        <button type="submit" [disabled]="!userForm.valid" class="btn btn-default login-button " style="float: right !important;" (click) = "onSubmit()">Login</button>
+      </div>
+      <ng-template #elseBlock>
+        <div>
+          <button type="submit" [disabled]="!forgotPasswordForm.valid" class="btn btn-default login-button pull-right" (click) = "forgotPassword()">Send mail</button>
+        </div>
+
+      </ng-template>
+    </form>
+
+  </div>
+
+
 </div>

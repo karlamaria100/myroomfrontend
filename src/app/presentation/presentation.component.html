@@ -1,192 +1,55 @@
-<style>
-  .tagline {
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-    font-size: 30px;
-    margin: 0 0 20px 0;
-    color: #fff;
-  }
+<div class="whole-container">
 
-  .hero {
-    display: table;
-    position: relative;
-    background-image: url(../../assets/images/4702132_orig.jpg);
-    background-size: cover;
-    padding: 150px 0;
-    color: #fff;
-    width: 100%;
-    height: 100vh;
-  }
-
-  .hero:after {
-    content: '';
-    z-index: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.65);
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
-
-  .hero .container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    width: 100%;
-  }
-
-  .hero-brand {
-    display: inline-block;
-    height: 300px;
-  }
-
-  .hero-brand:hover {
-    opacity: .75;
-  }
-
-  .hero-logo {
-    max-width: 500px;
-  }
-
-  .register-button {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 25px;
-    width: 200px;
-    height: 40px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-
-  .register-button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-    color: white;
-  }
-
-  .register-button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-
-  .register-button:hover span {
-    padding-right: 25px;
-  }
-
-  .register-button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
-
-  .button {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 25px;
-    width: 120px;
-    height: 40px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-    color: white;
-  }
-
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-
-  .button:hover span {
-    padding-right: 25px;
-  }
-
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
-
-  .col-md-12 {
-    margin-bottom: -50px;
-  }
-
-</style>
-
-<div>
-
-  <section class="hero">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-md-12">
-          <svg class="hero-logo" style="margin-left: auto; margin-right: auto; display: block; width: 40%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" width="100%" height="100%">
-            <defs>
-              <filter id="blackWash">
-                <feComponentTransfer>
-                  <feFuncR slope="0" type="linear"></feFuncR>
-                  <feFuncG slope="0" type="linear"></feFuncG>
-                  <feFuncB slope="0" type="linear"></feFuncB>
-                </feComponentTransfer>
-              </filter>
-              <filter id="whiteWash">
-                <feComponentTransfer>
-                  <feFuncR slope="0" type="linear"></feFuncR>
-                  <feFuncG slope="0" type="linear"></feFuncG>
-                  <feFuncB slope="0" type="linear"></feFuncB>
-                </feComponentTransfer>
-                <feComponentTransfer>
-                  <feFuncR tableValues="1 0" type="table"></feFuncR>
-                  <feFuncG tableValues="1 0" type="table"></feFuncG>
-                  <feFuncB tableValues="1 0" type="table"></feFuncB>
-                </feComponentTransfer>
-              </filter>
-            </defs>
-
-            <image xlink:href="../../assets/images/mock_07.png" width="1000" y="200" height="600"></image>
-            <image xlink:href="../../assets/images/1341665009_00d83e48-24d9-4651-9441-778f0f8fe27c.png?cb=1540656917" width="160" height="230" x="-380" y="480" transform="rotate(-35 80 120) skewX(27)"></image>
-          </svg>
-        </div>
+  <div class="header">
+    <div class="darken">
+      <div class="container-fluid">
+        <nav class="navbar">
+          <div class="nav pull-left">
+            <img src="../assets/images/logo.png" class="d-inline-block align-top appLogo">
+          </div>
+          <div class="nav navbar-text pull-right">
+            <button type="button" class="btn btn-primary btn-login" routerLink="/login">Login</button>
+          </div>
+        </nav>
       </div>
 
-      <div class="row">
-        <div class="col-md-12">
-
-          <p class="tagline">
-            Get the room that you deserve
-          </p>
-          <button class="button"> <a (click)="doLogin()" ><span>Login</span></a></button><br>
-          <button class="register-button"> <a  (click)="doRegister()"><span>Register</span></a></button>
+      <header class="intro-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="site-heading">
+                <h1><strong>TIME MANAGEMENT</strong></h1>
+                <p>TOOL FOR COMPANIES</p>
+                <button type="button" class="btn btn-primary btn-getStarted" routerLink="/register">GET STARTED</button>
+              </div>
+            </div>
+          </div>
+          <div class="landing-hand">
+            <img src="../assets/images/banner-landing-hand.png">
+          </div>
         </div>
-      </div>
-
+      </header>
     </div>
+  </div>
 
-  </section>
+  <div class="footer">
+    <div class="row2">
+      <div class="flexbox">
+        <img src="../assets/images/smartphone.png" class="contentImage"><br>
+        <span class="subtext"> On any device </span>
+      </div>
 
-  <app-chat></app-chat>
+      <div class="flexbox">
+        <img src="../assets/images/pie-chart.png" class="contentImage"><br>
+        <span class="subtext"> Detailed reports </span>
+      </div>
+
+      <div class="flexbox">
+        <img src="../assets/images/turn-notifications-on-button.png" class="contentImage"><br>
+        <span class="subtext"> Stay connected </span>
+      </div>
+    </div>
+  </div>
+
+
 </div>

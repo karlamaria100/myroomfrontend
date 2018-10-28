@@ -3,14 +3,12 @@ import {HttpClient} from '@angular/common/http';
 import {SharedService} from './shared.service';
 import {Observable} from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MainService {
 
   headers: any;
 
-  constructor(private _http: HttpClient, private shared: SharedService) { }
+  constructor(private _http: HttpClient, public shared: SharedService) { }
 
   setHeaders() {
     this.headers = {

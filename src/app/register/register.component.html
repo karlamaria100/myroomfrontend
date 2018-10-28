@@ -1,28 +1,79 @@
-<div  class="modal-content modal-lg" style="background-color: #DEB887 !important;">
-  <div class="modal-header" style=" border:0 ">
-    <button type="button" (click)="closeSignUpModal()"  style="outline: none!important;" class="close">
-      <span aria-hidden="true">×</span></button>
+
+<div class="container-fluid bg-image">
+
+  <div *ngIf="register">
+    <div class="animated-show-error animated  bounce message-show">
+      You have successfully registered
+
+      <button type="submit" class="btn btn-default goToLogin-button pull-right" (click)="gotToLogin()">Go to Login</button>
+
+    </div>
   </div>
-  <div class="modal-body sign-up" style="padding-left: 1rem;padding-right: 1rem;padding-top:0; padding-bottom: 0; border:0 ">
-    <div alt="step2" *ngIf="step1">
-      <h2 class="small-font" style="margin-top: 5px">CREATE YOUR ACCOUNT</h2>
-      <div class="modal-container">
-        <input [(ngModel)]="user.firstName" placeholder="First Name"  class="signup-input small-font" >
-        <input [(ngModel)]="user.lastName" placeholder="Last Name"  class="signup-input small-font">
-        <input [(ngModel)]="user.email" placeholder="Email" class="signup-input small-font">
-        <input [(ngModel)]="user.password" placeholder="Password" type="password" class="signup-input small-font">
-        <!--<input [(ngModel)]="user.gender" placeholder="Ge" type="password" class="signup-input small-font">-->
 
-        <select [(ngModel)]="user.gender" align="left">
-          <option value="">By Gender</option>
-          <option value="1">Female</option>
-          <option value="0">Male</option>
-        </select>
+  <div class="">
+    <nav class="navbar pull-left">
+      <div class="nav">
+        <img src="../assets/images/timemanager_logo_2.png" class="d-inline-block align-top appLogo">
       </div>
-        <button class="button small-but-bigger-font" (click)="finishAccount()">FINISH ></button>
+    </nav>
+  </div>
+
+  <div class="col-xs-12 col-sm-5 pull-right register-container">
+
+    <h2>Register</h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <input type="text" placeholder="* Company Name" class="form-control" formControlName="companyName">
+        <div *ngIf="userForm.controls['companyName'].hasError('required') && ng-touched" class="alert-input">
+          Please enter a name
+        </div>
       </div>
 
-    <div class="alert alert-default text-white small-font" style="padding-bottom: 10px" [hidden]="!showAlertMessage">{{alertMessage}}</div>
+
+      <div class="form-group">
+        <input type="text" placeholder="* First Name" class="form-control" formControlName="firstName">
+        <div *ngIf="userForm.controls['firstName'].hasError('required') && ng-touched" class="alert-input">
+          Please enter a name
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <input type="text" placeholder="* Last Name" class="form-control" formControlName="lastName">
+        <div *ngIf="userForm.controls['lastName'].hasError('required') && ng-touched" class="alert-input">
+          Please enter a name
+        </div>
+      </div>
+
+
+      <div class="form-group ">
+        <input type="email" #refEmail placeholder="* johnsmith@ashburton.com" class="form-control" formControlName="email">
+        <div *ngIf="userForm.controls['email'].hasError('required') && ng-touched" class="alert-input">
+          Please enter an email
+        </div>
+        <div *ngIf="userForm.controls['email'].hasError('pattern') && ng-touched" class="alert-input">
+        </div>
+      </div>
+
+
+      <div class="form-group ">
+        <input type="password" placeholder="* Password" class="form-control" formControlName="password">
+        <div *ngIf="userForm.controls['password'].hasError('required') && ng-touched" class="alert-input">
+          Please enter a password
+        </div>
+        <div *ngIf="userForm.controls['password'].hasError('minlength')" class="alert-input">
+          Please enter atleast 5 characters
+        </div>
+      </div>
+
+      <br>
+
+      <div>
+        <button type="submit" [disabled]="!userForm.valid" class="btn btn-default register-button pull-right">Register</button>
+      </div>
+    </form>
+
   </div>
 </div>
-

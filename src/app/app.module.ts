@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { MessagesService } from './services/messages.service';
 import { ThreadsService } from './services/threads.service';
 import { UsersService } from './services/users.service';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { FromNowPipe } from './from-now.pipe';
 import { ChatComponent } from './chat/chat.component';
@@ -22,9 +22,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {MainService} from './services/main.service';
 import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent, PresentationComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent, PresentationComponent, LoginComponent, RegisterComponent, DashboardComponent],
   imports: [
     MatDialogModule,
     HttpClientModule,
@@ -34,11 +35,11 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  // exports:[ AppRoutingModule],
   providers: [MessagesService, ThreadsService, UsersService, SharedService, MainService],
-  bootstrap: [AppComponent],
-  entryComponents: [LoginComponent, RegisterComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

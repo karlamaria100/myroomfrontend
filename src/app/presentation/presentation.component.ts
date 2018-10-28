@@ -22,10 +22,10 @@ export class PresentationComponent implements OnInit {
     this.dialogRefRegister = this.dialog.open(RegisterComponent);
   }
 
-  doLogin() {
-    this.dialogRefLogin = this.dialog.open(LoginComponent);
-
-  }
+  // doLogin() {
+  //   this.dialogRefLogin = this.dialog.open(LoginComponent);
+  //
+  // }
 
 
 

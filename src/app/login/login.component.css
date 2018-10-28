@@ -1,82 +1,191 @@
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 25px;
-  width: 200px;
-  height: 40px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+html{
+  min-height:100%;/* make sure it is at least as tall as the viewport */
+  position:relative;
+}
+body{
+  height:100%; /* force the BODY element to match the height of the HTML element */
 }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-  color: white;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
+img.backGround {
+  min-height: 100%;
+  min-width: 640px;
+  width: 100%;
+  height: auto;
+  position: fixed;
   top: 0;
-  right: -20px;
-  transition: 0.5s;
+  left: 0;
+  z-index: -2;
 }
 
-.button:hover span {
-  padding-right: 25px;
+.appLogo {
+  height: 55px;
+  width:200px;
+  margin: 20px;
 }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
+input.ng-invalid{
+  border-left: 3px solid #ee5d2c;
+}
+input.ng-valid{
+  border-left: 3px solid #00afef;
 }
 
-.modal-body {
-  font-size: 20px;
-  color: #292929 !important;
-  text-align: center;
-  font-family: 'EncodeSansNorm', san-serif;
-}
-
-.modal-body > div > p > a {
-  color: #00a7e9;
-
-}
-
-.modal-body > div > p > a:hover {
-  text-decoration: none;
-  color: #0d71bb;
-}
-
-.sign-up-list {
-  color: white !important;
-  text-align: left !important;
-  margin-top: 15px;
+h2{
+  color: white;
+  margin-left: 25px;
+  padding: 50px 20px 20px 20px;
   margin-bottom: 20px;
 }
 
-.sign-up-list > li {
-  font-size: 23px;
-  line-height: normal;
-}
-
-
-.signup-input {
-  width: 100%;
-  margin-bottom: 15px;
-  outline: none!important;
-  background-color: transparent !important;
-  font-size: 20px;
-  border: 0 !important;
-  font-family: "EncodeSansBold", san-serif;
+.login-button {
+  background: white;
+  color: #ef480c;
+  font-size: 20px !important;
+  font-weight: bold;
+  padding: 10px 25px 10px 25px;
+  border: none;
+  margin-right: 6%;
 
 }
+.form-group{
+  width: 90%;
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  margin-right: 20px;
 
+}
+
+.form-control{
+  height: 46px;
+  font-size: 18px;
+  background: #f05a24;
+  color: white;
+  margin: 0 0 20px 25px;
+  border: none;
+  position: relative;
+  float: left;
+  display: block;
+}
+
+.alert-input{
+  margin-left: 25px;
+  font-size: 18px;
+}
+
+.alert-input-forgot{
+  clear: both;
+  margin-left: 25px;
+  font-size: 18px;
+  color:black;
+}
+
+.alert-input-login{
+  margin-left: 25px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+a{
+  margin-left: 28px;
+  font-size: 18px;
+  color: white;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.show{
+  margin-top: 10px;
+}
+
+.bg-image {
+  background-image: url('../../assets/images/4702132_orig.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height: auto;
+  padding: 0;
+
+}
+
+.login-container {
+
+  right: 0;
+  height: 100vh;
+  background: #ef480c;
+}
+
+.animated-show-error{
+  position: fixed;
+  z-index:5;
+  width:100%;
+
+
+}
+
+.message-show{
+  position:absolute;
+
+  font-size: 25px;
+  padding: 10px;
+  padding-left: 25px !important;
+  position: fixed;
+  z-index:5;
+  width:100%;
+  background-color: white;
+  color: #ef480c;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+@media (max-width: 767px) {
+  .bg-image {
+    background-color: #C0D3E3;
+    background-image: none;
+  }
+
+
+  nav.navbar {
+    margin: 0 auto!important;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav.pull-left {
+    float: none!important;
+  }
+
+  .register-container {
+    height: 100%;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-group {
+    margin-left: -10px;
+  }
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
