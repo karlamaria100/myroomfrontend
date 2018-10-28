@@ -1,11 +1,52 @@
+<style>
+.button {
+display: inline-block;
+border-radius: 4px;
+background-color: #f4511e;
+border: none;
+color: #FFFFFF;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 250px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+.button span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.button span:after {
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.button:hover span {
+padding-right: 25px;
+}
+
+.button:hover span:after {
+opacity: 1;
+right: 0;
+}
+</style>
+
 <div class="whole-container">
 
-  <div class="header">
+  <div class="header" style="height: 100%;">
     <div class="darken">
       <div class="container-fluid">
         <nav class="navbar">
           <div class="nav pull-left">
-            <img src="../assets/images/logo.png" class="d-inline-block align-top appLogo">
           </div>
           <div class="nav navbar-text pull-right">
             <button type="button" class="btn btn-primary btn-login" routerLink="/login">Login</button>
@@ -18,38 +59,16 @@
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="site-heading">
-                <h1><strong>TIME MANAGEMENT</strong></h1>
-                <p>TOOL FOR COMPANIES</p>
-                <button type="button" class="btn btn-primary btn-getStarted" routerLink="/register">GET STARTED</button>
+                <h1><strong>MY ROOM</strong></h1>
+                <p>Get the room that you deserve</p>
+                <button class="button" routerLink="/register"><span>GET STARTED</span></button>
               </div>
             </div>
-          </div>
-          <div class="landing-hand">
-            <img src="../assets/images/banner-landing-hand.png">
           </div>
         </div>
       </header>
     </div>
   </div>
-
-  <div class="footer">
-    <div class="row2">
-      <div class="flexbox">
-        <img src="../assets/images/smartphone.png" class="contentImage"><br>
-        <span class="subtext"> On any device </span>
-      </div>
-
-      <div class="flexbox">
-        <img src="../assets/images/pie-chart.png" class="contentImage"><br>
-        <span class="subtext"> Detailed reports </span>
-      </div>
-
-      <div class="flexbox">
-        <img src="../assets/images/turn-notifications-on-button.png" class="contentImage"><br>
-        <span class="subtext"> Stay connected </span>
-      </div>
-    </div>
-  </div>
-
+<app-chat id="chatBot"></app-chat>
 
 </div>

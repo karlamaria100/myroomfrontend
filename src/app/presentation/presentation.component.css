@@ -1,19 +1,173 @@
-.chat-card {
-  width: 350px;
+.header {
+  background-image: url('../../assets/images/4702132_orig.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-color: rgba(0,0,0,0.7);
+  height: 80vh;
 }
 
-.chat-card-content {
-  padding-right: 10px;
-  padding-top: 15px;
+.btn-login {
+  background-color: #F45F26;
+  width: 110px;
+  height: 45px;
+  border-radius: 0 !important;
+  border: none;
+  font-size: 1.3em;
+}
+.btn-login:active {
+  background-color: #ef480c;
+}
+.btn-getStarted {
+  background-color: rgb(30, 144, 255);
+  border-radius: 0 !important;
+  border: none;
+  width:230px;
+  height: 55px;
+  font-size: 1.5em;
 }
 
-.full-width {
-  width: 260px;
+.subtext {
+  color: white;
+  font-size: 1.2em;
 }
 
-.input-group-btn {
-  float: right;
-  margin-top: 20px;
+.whole-container {
+  height: 100vh;
+}
+
+.appLogo {
+  height: 55px;
+  width:245px;
+  margin: 10px;
+}
+
+.contentImage {
+  width: 75px;
+  height: 75px;
+}
+header.intro-header {
+  margin-top: 35px;
+}
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 72, 14);
+  height:20vh;
+  text-align: center;
+  padding: 10px;
+  z-index:2;
+}
+
+.flexbox {
+  align-self: center;
+  flex-grow: 1;
+
+}
+
+div.landing-hand img {
+  position: fixed;
+  right:0;
+  bottom: 20vh;
+  width: 498px;
+  height: 561px;
+}
+
+.site-heading h1 {
+  color: #D6D7D8;
+  font-size: 3em;
+}
+
+.site-heading p {
+  color: #D6D7D8;
+  font-size: 1.4em;
+}
+
+.darken {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.navbar-text {
+  position: relative;
+  z-index: 999;
+}
+
+
+
+@media (max-width : 768px) {
+  .subtext {
+    font-size: 1em;
+  }
+
+  .btn-login {
+    width: 75px;
+  }
+
+  .landing-hand img{
+    display:none;
+  }
+
+  .site-heading {
+    margin-left: 50px;
+  }
+
+  .header {
+    background-image: url('../../assets/images/4702132_orig.jpg');
+    height: 100%;
+  }
+}
+
+@media (max-width : 900px) {
+  div.landing-hand img {
+    width: 373px;
+    height: 421px;
+  }
+}
+@media (max-height : 610px) {
+  div.landing-hand img {
+    width: 373px;
+    height: 421px;
+  }
+}
+
+@media (max-width : 400px) {
+  .subtext {
+    font-size: 0.8em;
+  }
+
+  .site-heading h1 {
+    font-size: 30px;
+  }
+
+  .site-heading {
+    margin: 0;
+  }
+  .appLogo{
+    height: 41px;
+    width: 183px;
+  }
+
+  img.contentImage {
+    height: 50px;
+    width: 50px;
+  }
+  header.intro-header {
+    text-align: center;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -22,4 +176,14 @@
   }
 }
 
+@media (min-width: 1600px) {
+  .header {
+    background-image: url('../../assets/images/4702132_orig.jpg');
+    height: 100vh;
+  }
+}
 
+*:focus,
+*:active {
+  outline: none;
+}

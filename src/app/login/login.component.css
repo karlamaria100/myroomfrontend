@@ -108,9 +108,7 @@ a:hover{
 }
 
 .bg-image {
-  background-image: url('../../assets/images/4702132_orig.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../../assets/images/4702132_orig.jpg') no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

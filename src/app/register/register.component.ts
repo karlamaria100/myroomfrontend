@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from "@angular/material";
 import {MainService} from "../services/main.service";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -17,15 +18,7 @@ export class RegisterComponent implements OnInit {
   userForm: FormGroup;
 
 
-  closeSignUpModal  () {
-    this.dialogRef.close();
-  }
-
-
   constructor(private _formBuilder: FormBuilder,private router: Router,  public mainService: MainService) { }
-
-
-
 
 
 
@@ -36,7 +29,7 @@ export class RegisterComponent implements OnInit {
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.pattern('^[_a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})$')]],
       password: ['', [Validators.required, Validators.minLength(5)]]
-    })
+    });
   }
   gotToLogin(){
     this.router.navigate(['./login']);
@@ -45,12 +38,12 @@ export class RegisterComponent implements OnInit {
     this.showSpinner = true;
     const data = {
       name: this.userForm.value.companyName
-    }
-    this.mainService.insertCompany(data).
-    subscribe(response => {
-      console.log(response);
-      this.insertUser(response);
-    }, Error => console.log(Error));
+    };
+    // this.mainService.insertCompany(data).
+    // subscribe(response => {
+    //   console.log(response);
+    //   this.insertUser(response);
+    // }, Error => console.log(Error));
   }
 
   insertUser(Obj) {
@@ -62,12 +55,12 @@ export class RegisterComponent implements OnInit {
       role: 1,
       company: Obj.company.id
     }
-    this.mainService.insertAdmin(data).
-    subscribe(response => {
-      console.log(response);
-      this.register = true;
-      this.showSpinner = false;
-    }, Error => console.log(Error));
+    // this.mainService.insertAdmin(data).
+    // subscribe(response => {
+    //   console.log(response);
+    //   this.register = true;
+    //   this.showSpinner = false;
+    // }, Error => console.log(Error));
   }
 
 
