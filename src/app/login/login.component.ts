@@ -38,14 +38,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
 
-    this.mainService.login(this.userForm.value.email,this.userForm.value.password).subscribe(response => {
+    this.mainService.login(this.userForm.value.email, this.userForm.value.password).subscribe(response => {
         if (response.json().status === "BAD_REQUEST") {
           this.loginOk = false;
-        }
-        else if(response.json().status === "FORBIDDEN" )  {
+        } else if (response.json().status === "FORBIDDEN" )  {
           this.loginForbidden = false;
-        }
-        else {
+        } else {
           this.loginForbidden = true;
           this.loginOk = true;
           this.badSentForgot = false;
@@ -59,19 +57,19 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('UserAdminObject', JSON.stringify(response));
           localStorage.setItem('Company', JSON.stringify(response.user.company));
 
-          if (response.user.role.name == "ADMIN") {
+          if (response.user.role.name === "ADMIN") {
             this.router.navigate(['/dashboard'])
 
             this.userObjectRetrived = localStorage.getItem('UserAdminObject');
             this.UserAdminObject = JSON.parse(this.userObjectRetrived);
             console.log('retrievedObject: ', this.UserAdminObject);
 
-            this.companyObjectRetrieved = localStorage.getItem('Company'),
+            this.companyObjectRetrieved = localStorage.getItem('Company');
               this.Company = JSON.parse(this.companyObjectRetrieved);
             console.log('retrievedObjectCompany: ', this.UserAdminObject);
           } else {
             alert("The web dashboard is currently unavailable for user accounts. Use an admin account or the mobile app.")
-            this.router.navigate(['/admin-only'])
+            this.router.navigate(['/admin-only']);
           }
         }
 

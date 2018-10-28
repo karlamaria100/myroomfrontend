@@ -1,6 +1,6 @@
 <!--<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>-->
 
-<div class="container-fluid bg-image" style="height: 100%">
+<div class="container-fluid bg-image" style="height: 950px">
 
   <div *ngIf="!loginOk">
     <div class="animated-show-error  animated  bounce message-show">
@@ -35,7 +35,7 @@
     </nav>
   </div>
 <!--<div class="col-xs-12 col-sm-5  login-container"></div>-->
-  <div class="col-xs-12 col-sm-5  login-container" >
+  <div class="col-xs-12 login-container" >
 
     <h2> Login </h2>
     <form [formGroup]="userForm">
@@ -82,7 +82,7 @@
       </div>
       <ng-template #elseBlock>
         <div>
-          <button type="submit" [disabled]="!forgotPasswordForm.valid" class="btn btn-default login-button pull-right" (click) = "forgotPassword()">Send mail</button>
+          <button type="submit" [disabled]="!forgotPasswordForm.valid" class="btn btn-default login-button" (click) = "forgotPassword()">Send mail</button>
         </div>
 
       </ng-template>

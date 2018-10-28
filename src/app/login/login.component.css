@@ -47,6 +47,7 @@ h2{
   margin-right: 6%;
 
 }
+
 .form-group{
   width: 90%;
   position: relative;
@@ -121,8 +122,10 @@ a:hover{
 .login-container {
 
   right: 0;
-  height: 100vh;
+  height: 60%;
+  width: 400px;
   background: #ef480c;
+  float: right;
 }
 
 .animated-show-error{
@@ -154,28 +157,27 @@ button:disabled {
   cursor: default;
 }
 
-@media (max-width: 767px) {
-  .bg-image {
-    background-color: #C0D3E3;
-    background-image: none;
-  }
+/*@media (max-width: 767px) {*/
+  /*.bg-image {*/
+    /*background: url('../../assets/images/4702132_orig.jpg') no-repeat center;*/
+  /*}*/
 
 
-  nav.navbar {
-    margin: 0 auto!important;
-    display: flex;
-    justify-content: center;
-  }
+  /*nav.navbar {*/
+    /*margin: 0 auto!important;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+  /*}*/
 
-  nav.pull-left {
-    float: none!important;
-  }
+  /*nav.pull-left {*/
+    /*float: none!important;*/
+  /*}*/
 
-  .register-container {
-    height: 100%;
-    padding-bottom: 30px;
-  }
-}
+  /*.register-container {*/
+    /*height: 100%;*/
+    /*padding-bottom: 30px;*/
+  /*}*/
+/*}*/
 
 @media (max-width: 400px) {
   .form-group {
