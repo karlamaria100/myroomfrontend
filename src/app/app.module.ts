@@ -23,9 +23,11 @@ import { RegisterComponent } from './register/register.component';
 import {MainService} from './services/main.service';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardLandingComponent } from './dashboard-landing/dashboard-landing.component';
+import {AuthGuard} from './auth.service';
 
 @NgModule({
-  declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent, PresentationComponent, LoginComponent, RegisterComponent, DashboardComponent],
+  declarations: [AppComponent, ChatMessageComponent, FromNowPipe, ChatComponent, PresentationComponent, LoginComponent, RegisterComponent, DashboardComponent, DashboardLandingComponent],
   imports: [
     MatDialogModule,
     HttpClientModule,
@@ -39,7 +41,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [MessagesService, ThreadsService, UsersService, SharedService, MainService],
+  providers: [MessagesService, ThreadsService, UsersService, SharedService, MainService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

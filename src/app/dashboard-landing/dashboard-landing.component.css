@@ -1,0 +1,121 @@
+
+.cont{
+  margin-left: 20px;
+}
+
+.text-company-header{
+  color:#ef480c;
+  font-size: 25px;
+  letter-spacing: 1px;
+  margin: 10px;
+  display: inline-block;
+  float: left;
+}
+
+.text-decoration{
+  color: #9A9A99;
+  font-size: 20px;
+  padding-top: 5px;
+  margin: 10px;
+  display: inline-block;
+  float: left;
+}
+
+.clearBoth{
+  clear: both;
+}
+
+h4{
+  margin: 0!important;
+  padding: 10px 0;
+}
+
+a{
+  margin: 10px 13px 0 0;
+  float: right;
+  color: #F4A491;
+  font-size: 16px;
+  text-decoration: underline;
+}
+a:hover{
+  color: white;
+  cursor: pointer;
+}
+
+
+.container{
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.card {
+  font-size: 1em;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  border-radius: 3%;
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: 10px;
+}
+
+
+.card-img-top {
+  background-color: #EE5D2C;
+  display: block;
+  width: 100%;
+  height: 35px;
+  position: relative; top: 0; left: 0;
+}
+
+
+.card-title {
+  font-size: 20px;
+  line-height: 1.2857em;
+  color: white;
+  background-color: #ef480c;
+}
+
+.card-block {
+  font-size: 1em;
+  position: relative;
+  margin: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EE5D2C;
+}
+
+.number-card{
+  color: white;
+  font-size: 70px;
+  margin: 0px auto;
+}
+
+.employee-table, .project-table, .hours-table{
+  padding: 15px;
+
+}
+
+.employee-table td, .employee-table th, .project-table td, .project-table th, .hours-table th, .hours-table td{
+  vertical-align: middle;
+  padding-left: 30px;
+}
+
+.listMessageShow{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1500px){
+  .card-title {
+    font-size: 15px;
+  }
+  .number-card{
+    font-size: 50px;
+  }
+}

@@ -1,0 +1,138 @@
+
+<div>
+  <div class="col-xs-10 col-sm-10 col-md-4  container">
+    <div class="card ">
+
+      <div class="card-block">
+        <div class="number-card">{{shared.companies.length}}</div>
+      </div>
+      <h4 class="card-title" align="center">Companies</h4>
+
+    </div>
+    <br>
+    <div *ngIf="shared.companies.length !== 0; else elseEmployeeShow">
+      <table class="table table-hover table-responsive employee-table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let company of shared.companies">
+          <td> {{company.id}}</td>
+          <td>
+            {{company.name}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #elseEmployeeShow>
+      <div class="listMessageShow">No companies added</div>
+    </ng-template>
+  </div>
+
+  <div class="col-xs-10 col-sm-10 col-md-4   container">
+    <div class="card ">
+
+      <div class="card-block">
+        <div class="number-card">{{shared.sessions.length}}</div>
+      </div>
+      <h4 class="card-title" align="center">Sessions</h4>
+
+    </div>
+
+    <br>
+    <div *ngIf="shared.sessions.length !== 0; else elseProjectShow">
+      <table class="table table-hover table-responsive project-table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Project</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let sessions of shared.sessions">
+          <td> {{sessions.id}}</td>
+          <td>
+            {{sessions.name}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #elseProjectShow>
+      <div class="listMessageShow">No sessions added</div>
+    </ng-template>
+  </div>
+
+  <div class="col-xs-10 col-sm-10 col-md-4   container">
+    <div class="card ">
+      <div class="card-block">
+
+        <div class="number-card">{{shared.accommodations.length}}</div>
+      </div>
+
+      <h4 class="card-title" align="center">Accommodations</h4>
+    </div>
+    <br>
+    <div *ngIf="shared.accommodations.length !== 0; else elseHoursShow">
+      <table class="table table-hover table-responsive hours-table">
+        <thead>
+        <tr>
+          <th>Email</th>
+          <th>Hours</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let accommodation of shared.accommodations">
+          <td> {{accommodation.id}}</td>
+          <td>
+            {{accommodation.name}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #elseHoursShow>
+      <div class="listMessageShow">No hours added this month</div>
+    </ng-template>
+  </div>
+
+  <div class="col-xs-10 col-sm-10 col-md-4   container">
+    <div class="card ">
+
+      <div class="card-block">
+        <div class="number-card">{{shared.departments.length}}</div>
+      </div>
+      <h4 class="card-title" align="center">Sessions</h4>
+
+    </div>
+
+    <br>
+    <div *ngIf="shared.departments.length !== 0; else elseProjectShow">
+      <table class="table table-hover table-responsive project-table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Project</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let department of shared.departments">
+          <td> {{department.id}}</td>
+          <td>
+            {{department.name}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #elseProjectShow>
+      <div class="listMessageShow">No sessions added</div>
+    </ng-template>
+  </div>
+
+  <br class="clearBoth">
+</div>

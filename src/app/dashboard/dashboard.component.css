@@ -1,0 +1,54 @@
+
+.dashboard-panel {
+  display: flex;
+  margin-top: 0px;
+}
+
+.dashboard-screen{
+  overflow: auto;
+  width:100%;
+}
+
+.dashboard-menu {
+  background-color: #ECEBD9;
+  min-height: 94%;
+}
+
+html, body, .dashboard-panel {
+  height: 100vh;
+}
+
+div.menu-panel {
+  width: 350px;
+  overflow: hidden;
+}
+
+.menu-item {
+  padding: 10px 25px 15px !important;
+  border-bottom: 0.5px solid #DEDCCE;
+  color:#9a9a99;
+  cursor: pointer;
+  height:100%;
+}
+
+.active-page,
+.menu-item:hover {
+  background-color: #DEDCCE;
+}
+
+.menu-panel img {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  height: 80px;
+  width: 200px
+}
+
+.menu-panel ul {
+  margin-top: 15px;
+}
+
+ul.nav li:focus {
+  outline: none;
+}
+

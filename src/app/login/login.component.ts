@@ -39,10 +39,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
 
     this.mainService.login(this.userForm.value.email,this.userForm.value.password).subscribe(response => {
-        if (response.json().status === "BAD_REQUEST") {
+        if (response.body.status === "BAD_REQUEST") {
           this.loginOk = false;
         }
-        else if(response.json().status === "FORBIDDEN" )  {
+        else if(response.body.status === "FORBIDDEN" )  {
           this.loginForbidden = false;
         }
         else {
@@ -54,12 +54,11 @@ export class LoginComponent implements OnInit {
           console.log("Login response:");
           console.log(localStorage.getItem("Auth"));
 
-          response = response.json();
+          response = response.body;
 
           localStorage.setItem('UserAdminObject', JSON.stringify(response));
-          localStorage.setItem('Company', JSON.stringify(response.user.company));
 
-          if (response.user.role.name == "ADMIN") {
+          if (response.details.type == 0) {
             this.router.navigate(['/dashboard'])
 
             this.userObjectRetrived = localStorage.getItem('UserAdminObject');
@@ -71,7 +70,6 @@ export class LoginComponent implements OnInit {
             console.log('retrievedObjectCompany: ', this.UserAdminObject);
           } else {
             alert("The web dashboard is currently unavailable for user accounts. Use an admin account or the mobile app.")
-            this.router.navigate(['/admin-only'])
           }
         }
 

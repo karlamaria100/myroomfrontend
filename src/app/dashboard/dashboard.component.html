@@ -1,3 +1,118 @@
-<p>
-  dashboard works!
-</p>
+<style>
+  .dropdown-item{
+    font-size: 10px;
+  }
+
+  .button {
+    /*display: inline-block;*/
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    /*margin: 5px;*/
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+</style>
+<div class="dashboard-panel">
+  <div class="dashboard-menu">
+    <div class="menu-panel">
+
+      <a routerLink="../dashboard" routerLinkActive="active-page"><img src="../../assets/images/1341665009_00d83e48-24d9-4651-9441-778f0f8fe27c.png"></a>
+
+      <ul id="nav-tabs-wrapper menu" class="nav">
+
+        <div class="dropdown" style="margin-bottom: 60px; margin-left: 30px; margin-top: 40px; background-color: #EE5D2C">
+          <button class="button" style="background-color: #EE5D2C;" (click)="select('company')">
+            ADD company
+          </button>
+          <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+            <!--<a class="dropdown-item" *ngFor="let company of shared.companies" href="#">{{company.name}}</a>-->
+          <!--</div>-->
+        </div>
+
+
+
+        <div class="dropdown" style="margin-bottom: 60px; margin-left: 30px; background-color: #EE5D2C;">
+          <button class="button" style="background-color: #EE5D2C;" (click)="select('session')">
+            ADD Session
+          </button>
+          <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">-->
+            <!--<a class="dropdown-item" *ngFor="let session of shared.sessions" href="#">{{session.name}}</a>-->
+          <!--</div>-->
+        </div>
+
+
+
+        <div class="dropdown" style="margin-bottom: 60px; margin-left: 30px; background-color: #EE5D2C;">
+          <button class="button" style="background-color: #EE5D2C;display: block" (click)="select('accommodation')">
+            ADD Accommodation
+          </button>
+          <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">-->
+            <!--<a class="dropdown-item" *ngFor="let accommodation of shared.accommodations" href="#">{{accommodation.name}}</a>-->
+          <!--</div>-->
+        </div>
+
+        <div class="dropdown" style="margin-bottom: 60px; margin-left: 30px; background-color: #EE5D2C;">
+          <button class="button" style="background-color: #EE5D2C;" (click)="select('room')">
+            ADD Room
+          </button>
+          <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">-->
+            <!--<a class="dropdown-item" *ngFor="let room of shared.rooms" href="#">{{room.number}}</a>-->
+          <!--</div>-->
+        </div>
+
+        <!--<div class="dropdown" style="margin-bottom: 60px; margin-left: 30px; background-color: #EE5D2C; ">-->
+
+          <!--<button style="background-color: #EE5D2C !important; " type="submit" class="btn btn-default login-button " style="float: right !important;" (click) = "onSubmit()">Search</button>-->
+
+        <!--</div>-->
+        <!--<li class="menu-item" routerLink="../dashboard" routerLinkActive="active-page" [routerLinkActiveOptions]="{ exact: true }">Dashboard</li>-->
+        <!--<li class="menu-item" routerLink="./companies" routerLinkActive="active-page">Companies</li>-->
+        <!--<li class="menu-item" routerLink="./projects" routerLinkActive="active-page">Projects</li>-->
+        <!--<li class="menu-item" routerLink="./reports" routerLinkActive="active-page">Reports</li>-->
+        <!--<li class="menu-item" routerLink="./hours" routerLinkActive="active-page">Reports</li>-->
+        <!--<li class="menu-item" routerLink="./vacations" routerLinkActive="active-page">Vacations</li>-->
+        <!--<li class="menu-item" routerLink="./estimates" routerLinkActive="active-page">Estimates</li>-->
+      </ul>
+
+    </div>
+  </div>
+  <div class="dashboard-screen">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
